@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAI主网方案：DePIN+AI基础设施赋能双飞轮战略</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #0a0a0a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .hero .english {
+            font-size: 0.9rem;
+            color: #888888;
+            margin-bottom: 30px;
+        }
+
+        /* Summary */
+        .summary {
+            padding: 40px 0;
+            background: rgba(26, 26, 26, 0.3);
+        }
+
+        .summary h2 {
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .summary-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .value-prop {
+            padding: 20px;
+            background: rgba(42, 42, 42, 0.5);
+            border-radius: 10px;
+        }
+
+        .value-prop h4 {
+            font-size: 1rem;
+            color: #ffd700;
+            margin-bottom: 8px;
+        }
+
+        .value-prop p {
+            font-size: 0.9rem;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+
+        /* Sections */
+        .section {
+            padding: 50px 0;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(17, 17, 17, 0.5);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .chapter {
+            margin-bottom: 40px;
+        }
+
+        .chapter-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #333;
+        }
+
+        .content {
+            margin-bottom: 25px;
+        }
+
+        .content h4 {
+            font-size: 1.1rem;
+            color: #ffd700;
+            margin-bottom: 12px;
+        }
+
+        .content p {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content li {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        /* Dual Flywheel */
+        .dual-flywheel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .flywheel {
+            padding: 25px;
+            background: rgba(42, 42, 42, 0.3);
+            border-radius: 15px;
+            border: 1px solid #444;
+        }
+
+        .flywheel h4 {
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flywheel ul {
+            list-style: none;
+        }
+
+        .flywheel li {
+            margin: 8px 0;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .flywheel li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
+        /* Tree Structure */
+        .tree {
+            background: rgba(15, 15, 15, 0.8);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .tree pre {
+            color: #e0e0e0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Formula */
+        .formula {
+            background: rgba(42, 42, 42, 0.5);
+            border: 1px solid #555;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula h5 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .formula-text {
+            font-family: monospace;
+            color: #4169e1;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        /* Three Column */
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .col-item {
+            padding: 20px;
+            background: rgba(42, 42, 42, 0.3);
+            border-radius: 10px;
+        }
+
+        .col-item h5 {
+            font-size: 1rem;
+            color: #ffd700;
+            margin-bottom: 12px;
+        }
+
+        .col-item ul {
+            list-style: none;
+        }
+
+        .col-item li {
+            margin: 6px 0;
+            padding-left: 12px;
+            position: relative;
+            font-size: 0.85rem;
+            color: #cccccc;
+        }
+
+        .col-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
+        /* Token Allocation */
+        .allocation {
+            margin: 20px 0;
+        }
+
+        .allocation-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        .allocation-item:last-child {
+            border-bottom: none;
+        }
+
+        .allocation-label {
+            color: #e0e0e0;
+        }
+
+        .allocation-value {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 20px;
+            background: rgba(42, 42, 42, 0.3);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #cccccc;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .dual-flywheel,
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .three-col {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .value-props {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">EAI</div>
+            <ul class="nav-links">
+                <li><a href="#summary">摘要</a></li>
+                <li><a href="#strategy">战略基础</a></li>
+                <li><a href="#tech">技术架构</a></li>
+                <li><a href="#ecosystem">生态模块</a></li>
+                <li><a href="#tokenomics">代币经济</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>EAI主网方案：DePIN+AI基础设施<br>赋能双飞轮战略</h1>
+            <p class="subtitle">EAI Mainnet Strategic Plan: DePIN+AI Blockchain Infrastructure Empowering Dual-Flywheel Strategy</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">数十亿</span>
+                    <div class="stat-label">美元预期估值</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10K+</span>
+                    <div class="stat-label">TPS处理能力</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3秒</span>
+                    <div class="stat-label">出块时间</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">&lt;$0.01</span>
+                    <div class="stat-label">Gas费用</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary -->
+    <section id="summary" class="summary">
+        <div class="container">
+            <h2>摘要 Summary</h2>
+            <p class="summary-text">
+                EAI主网是为实现FF"双飞轮&双桥梁"战略而设计的Web3基础设施解决方案。通过构建DePIN（去中心化物理基础设施网络）+AI驱动的公链生态，EAI主网将成为连接实体制造业与数字经济的关键基础设施，实现产业数据资产化、价值链重构和生态系统指数级增长。
+            </p>
+            
+            <h4 style="color: #ffd700; margin-bottom: 15px;">核心价值主张：</h4>
+            <div class="value-props">
+                <div class="value-prop">
+                    <h4>战略支撑</h4>
+                    <p>完美承接FF双飞轮战略，实现EAI EV飞轮（稳健长期）与Crypto飞轮（快速短期）的双向赋能</p>
+                </div>
+                <div class="value-prop">
+                    <h4>技术创新</h4>
+                    <p>全球首个融合DePIN+AI的汽车产业公链，将物理世界数据转化为链上资产</p>
+                </div>
+                <div class="value-prop">
+                    <h4>商业闭环</h4>
+                    <p>从数据采集到价值变现的完整生态，预期3年内达到数十亿美元估值</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy -->
+    <section id="strategy" class="section">
+        <div class="container">
+            <h2 class="section-title">第一章：战略基础 - 双飞轮驱动的必然选择</h2>
+            
+            <div class="chapter">
+                <h3 class="chapter-title">1.1 双飞轮战略解析</h3>
+                <p style="color: #e0e0e0; margin-bottom: 20px;">FF的双飞轮战略代表了制造业Web3转型的创新范式：</p>
+                
+                <div class="dual-flywheel">
+                    <div class="flywheel">
+                        <h4><i class="fas fa-car"></i> EAI EV飞轮（实体产业飞轮）</h4>
+                        <ul>
+                            <li>40亿美元技术积累，美国本土四大新造车企业之一</li>
+                            <li>完整的研发-生产-销售闭环体系</li>
+                            <li>特点：周期长、资金密集、技术密集、厚积薄发</li>
+                        </ul>
+                    </div>
+                    <div class="flywheel">
+                        <h4><i class="fab fa-bitcoin"></i> Crypto飞轮（数字经济飞轮）</h4>
+                        <ul>
+                            <li>抓住加密资产超级周期（2024-2034）</li>
+                            <li>快速变现、高流动性、立竿见影</li>
+                            <li>特点：短周期、快节奏、高价值、现金奶牛</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h4>双向赋能机制：</h4>
+                    <ul>
+                        <li>EAI EV → Crypto：技术积累加速场景落地</li>
+                        <li>Crypto → EAI EV：资金回流支持量产扩张</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">1.2 智能车链 - 桥接物理与数字世界</h3>
+                <p style="color: #e0e0e0; margin-bottom: 15px;">智能车链（FF EAI Car Chain）是双飞轮战略的核心连接器：</p>
+                <ul style="margin-left: 20px;">
+                    <li style="color: #cccccc; margin: 8px 0;">数据层：车辆运行数据、驾驶行为数据、能耗数据</li>
+                    <li style="color: #cccccc; margin: 8px 0;">激励层：PoD（Proof of Driving）挖矿机制</li>
+                    <li style="color: #cccccc; margin: 8px 0;">应用层：供应链金融、智能制造、售后服务</li>
+                    <li style="color: #cccccc; margin: 8px 0;">价值层：数据资产化、Token经济、生态收益</li>
+                </ul>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">1.3 为什么需要EAI主网</h3>
+                <div class="two-col">
+                    <div>
+                        <h4 style="color: #ffd700; margin-bottom: 12px;">产业痛点：</h4>
+                        <ul style="margin-left: 20px;">
+                            <li style="color: #cccccc; margin: 8px 0;">传统汽车产业数据孤岛严重，价值无法流通</li>
+                            <li style="color: #cccccc; margin: 8px 0;">供应链金融成本高、效率低、透明度差</li>
+                            <li style="color: #cccccc; margin: 8px 0;">用户数据被垄断，无法获得应有收益</li>
+                            <li style="color: #cccccc; margin: 8px 0;">制造业与金融市场脱节，估值逻辑单一</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #ffd700; margin-bottom: 12px;">EAI主网解决方案：</h4>
+                        <ul style="margin-left: 20px;">
+                            <li style="color: #cccccc; margin: 8px 0;">构建产业级区块链基础设施</li>
+                            <li style="color: #cccccc; margin: 8px 0;">实现数据确权、定价、交易的完整闭环</li>
+                            <li style="color: #cccccc; margin: 8px 0;">打通制造业与加密金融的价值通道</li>
+                            <li style="color: #cccccc; margin: 8px 0;">创造全新的"产业+金融+数据"三元价值模型</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="tech" class="section">
+        <div class="container">
+            <h2 class="section-title">第二章：技术架构 - DePIN+AI的创新融合</h2>
+            
+            <div class="chapter">
+                <h3 class="chapter-title">2.1 DePIN属性 - 去中心化物理基础设施网络</h3>
+                <p style="color: #e0e0e0; margin-bottom: 20px;">核心理念：将物理世界的基础设施通过区块链实现去中心化管理和价值分配</p>
+                
+                <h4 style="color: #ffd700; margin-bottom: 15px;">EAI主网的DePIN实现：</h4>
+                <div class="tree">
+                    <pre>物理层：
+├── 智能汽车节点（每辆FF车即为网络节点）
+├── 充电站网络（能源基础设施）
+├── 制造工厂（生产数据源）
+└── 供应链节点（零部件追踪）
+
+数据层：
+├── 驾驶数据（里程、路线、驾驶习惯）
+├── 车辆数据（性能、维护、故障）
+├── 能源数据（充电、能耗、电池状态）
+└── 制造数据（生产批次、质量、供应链）
+
+激励层：
+├── PoD挖矿（驾驶即挖矿）
+├── 数据贡献奖励
+├── 节点运营收益
+└── 生态治理权益</pre>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">2.2 AI集成 - 汽车智能化与链上协同</h3>
+                
+                <div class="two-col">
+                    <div>
+                        <h4 style="color: #ffd700; margin-bottom: 12px;">FF汽车AI技术上链：</h4>
+                        <div style="margin-bottom: 15px;">
+                            <h5 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 8px;">智能驾驶数据</h5>
+                            <ul style="margin-left: 15px; margin-bottom: 12px;">
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">自动驾驶算法训练数据共享</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">ADAS系统性能数据</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">路况识别模型优化</li>
+                            </ul>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <h5 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 8px;">智能座舱交互</h5>
+                            <ul style="margin-left: 15px; margin-bottom: 12px;">
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">用户偏好数据上链</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">语音助手使用数据</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">个性化服务定制</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 15px;">
+                            <h5 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 8px;">车辆AI决策</h5>
+                            <ul style="margin-left: 15px; margin-bottom: 12px;">
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">能源管理AI（电池优化）</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">路径规划算法</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">预测性维护AI</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 8px;">链上AI应用：</h5>
+                            <ul style="margin-left: 15px;">
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">数据质量验证（防止PoD作弊）</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">智能合约自动执行</li>
+                                <li style="color: #cccccc; font-size: 0.85rem; margin: 4px 0;">风险评估模型</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">2.3 技术栈设计</h3>
+                
+                <div class="content">
+                    <h4>共识机制：PoSA（Proof of Staked Authority）</h4>
+                    <ul>
+                        <li>结合权益质押与授权节点的双重机制</li>
+                        <li>TPS：10,000+，满足高频数据上链需求</li>
+                        <li>出块时间：3秒，保证实时性</li>
+                        <li>Gas费用：< $0.01，降低使用门槛</li>
+                    </ul>
+                </div>
+
+                <h4 style="color: #ffd700; margin-bottom: 15px;">核心技术组件：</h4>
+                <div class="tree">
+                    <pre>基础层：
+├── PoSA共识引擎
+├── EVM兼容层
+├── 跨链桥接协议
+└── 分布式存储（IPFS）
+
+中间层：
+├── DID身份系统
+├── Oracle预言机网络
+├── AI计算层
+└── 隐私计算模块
+
+应用层：
+├── DeFi协议套件
+├── NFT标准框架
+├── DApp开发SDK
+└── 生态接入工具</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem -->
+    <section id="ecosystem" class="section">
+        <div class="container">
+            <h2 class="section-title">第三章：生态模块设计 - 完整的价值闭环</h2>
+            
+            <div class="chapter">
+                <h3 class="chapter-title">3.1 C10 INDEX FUND - 金融入口</h3>
+                <p style="color: #e0e0e0; margin-bottom: 15px;">定位：加密资产"纳斯达克100指数"</p>
+                
+                <div class="two-col">
+                    <div>
+                        <h4>产品矩阵：</h4>
+                        <ul>
+                            <li>C10指数：追踪前10大加密资产（除稳定币）</li>
+                            <li>C10 Treasury：5-10亿美元资产管理规模</li>
+                            <li>C10 ETF：合规的指数基金产品</li>
+                        </ul>
+                        
+                        <h4>配置策略：</h4>
+                        <ul>
+                            <li>80%被动配置：严格跟踪指数</li>
+                            <li>20%主动配置：战略性投资机会</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>价值锚定：</h4>
+                        <ul>
+                            <li>历史回测：5年CAGR 70%，总回报18倍</li>
+                            <li>为EAI生态提供稳定的资金支撑</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">3.2 DID & Social Data - 用户数据主权</h3>
+                
+                <div class="content">
+                    <h4>去中心化身份系统：</h4>
+                    <div class="tree">
+                        <pre>用户DID
+├── 链上身份认证
+├── 数据授权管理
+├── 信用评分体系
+└── 跨应用互通
+
+数据资产化：
+├── 数据确权NFT
+├── 使用权交易市场
+├── 收益分配机制
+└── 隐私保护协议</pre>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h4>社交数据价值化：</h4>
+                    <ul>
+                        <li>用户行为数据上链存证</li>
+                        <li>基于贡献的Token激励</li>
+                        <li>数据使用费用回馈用户</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">3.3 供应链金融 - 产业赋能</h3>
+                <p style="color: #e0e0e0; margin-bottom: 15px;">链上供应链金融解决方案：</p>
+                
+                <div class="three-col">
+                    <div class="col-item">
+                        <h5>应收账款融资</h5>
+                        <ul>
+                            <li>链上应收凭证Token化</li>
+                            <li>自动化保理流程</li>
+                            <li>实时清结算</li>
+                        </ul>
+                    </div>
+                    <div class="col-item">
+                        <h5>存货质押融资</h5>
+                        <ul>
+                            <li>数字化仓单管理</li>
+                            <li>智能合约锁仓</li>
+                            <li>动态质押率调整</li>
+                        </ul>
+                    </div>
+                    <div class="col-item">
+                        <h5>订单融资</h5>
+                        <ul>
+                            <li>订单数据上链</li>
+                            <li>信用评级模型</li>
+                            <li>风险定价机制</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">3.4 PoD（Proof of Driving）- 驾驶即挖矿</h3>
+                
+                <div class="content">
+                    <h4>创新机制设计：</h4>
+                    <div class="formula">
+                        <h5>挖矿收益计算：</h5>
+                        <div class="formula-text">
+                            Daily Reward = Base Rate × <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Distance Factor × <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eco-Driving Score × <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Quality Bonus
+                        </div>
+                    </div>
+                </div>
+
+                <div class="two-col">
+                    <div>
+                        <h4>参数说明：</h4>
+                        <ul>
+                            <li>Base Rate：基础挖矿速率</li>
+                            <li>Distance Factor：里程系数（防作弊机制）</li>
+                            <li>Eco-Driving Score：环保驾驶评分</li>
+                            <li>Data Quality Bonus：数据完整性奖励</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>数据价值链：</h4>
+                        <ul>
+                            <li>数据采集：车载设备实时上传</li>
+                            <li>数据验证：AI模型校验真实性</li>
+                            <li>数据定价：市场化定价机制</li>
+                            <li>价值分配：70%归用户，30%归生态</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">3.5 DApp生态与代币发行能力</h3>
+                
+                <div class="content">
+                    <h4>生态企业接入：</h4>
+                    <p>未来将有众多企业成为EAI主网生态的一部分，在链上发行和运营他们的代币：</p>
+                    
+                    <h4>预期生态企业类型：</h4>
+                    <ul>
+                        <li>智能制造企业：AIBOT、工业4.0企业</li>
+                        <li>新能源服务商：充电网络运营商、换电站</li>
+                        <li>汽车服务企业：保险公司、维保连锁、二手车平台</li>
+                        <li>供应链企业：零部件供应商、物流公司</li>
+                        <li>科技创新企业：自动驾驶、车联网、智能硬件</li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <h4>生态支持工具：</h4>
+                    <div class="tree">
+                        <pre>标准化接入：
+├── 统一的代币标准（兼容ERC20/721/1155）
+├── 开发者SDK和API
+├── 技术文档和培训
+└── 测试环境支持
+
+运营支持：
+├── 流动性支持方案
+├── 跨链互操作协议
+├── 用户共享机制
+└── 联合营销资源</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="section">
+        <div class="container">
+            <h2 class="section-title">第四章：代币经济模型 - 多维价值捕获</h2>
+            
+            <div class="chapter">
+                <h3 class="chapter-title">4.1 代币体系设计</h3>
+                
+                <div class="three-col">
+                    <div class="col-item">
+                        <h5>C10（指数基金代币）</h5>
+                        <ul>
+                            <li>功能：投资工具、价值储存</li>
+                            <li>发行：锚定资产净值</li>
+                            <li>收益：底层资产增值+质押收益</li>
+                        </ul>
+                    </div>
+                    <div class="col-item">
+                        <h5>EAI（主网原生代币）</h5>
+                        <ul>
+                            <li>功能：Gas费、质押、治理</li>
+                            <li>总量：100亿枚</li>
+                        </ul>
+                    </div>
+                    <div class="col-item">
+                        <h5>生态企业代币</h5>
+                        <ul>
+                            <li>各企业在EAI链上自主发行</li>
+                            <li>使用EAI作为Gas费</li>
+                            <li>共享EAI主网的基础设施和用户</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h4>EAI代币分配方案：</h4>
+                    <div class="allocation">
+                        <div class="allocation-item">
+                            <span class="allocation-label">生态激励（PoD挖矿、DApp奖励）</span>
+                            <span class="allocation-value">30%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="allocation-label">私募与公募</span>
+                            <span class="allocation-value">25%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="allocation-label">团队与顾问（4年线性释放）</span>
+                            <span class="allocation-value">20%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="allocation-label">Treasury储备</span>
+                            <span class="allocation-value">15%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="allocation-label">流动性与做市</span>
+                            <span class="allocation-value">10%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <h3 class="chapter-title">4.2 价值捕获机制</h3>
+                
+                <div class="two-col">
+                    <div>
+                        <h4>EAI代币价值来源：</h4>
+                        <ul>
+                            <li>网络使用费：所有交易消耗EAI作为Gas</li>
+                            <li>质押收益：验证节点质押获得区块奖励</li>
+                            <li>生态接入费：企业使用基础设施支付EAI</li>
+                            <li>数据交易：数据市场交易手续费</li>
+                            <li>生态增值：DApp发展带来的需求增长</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>通缩机制：</h4>
+                        <ul>
+                            <li>交易费用销毁：50%的Gas费用销毁</li>
+                            <li>回购销毁：生态收入的20%用于回购销毁</li>
+                            <li>质押锁仓：预计60%以上代币长期质押</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 EAI主网. DePIN+AI基础设施赋能双飞轮战略</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
