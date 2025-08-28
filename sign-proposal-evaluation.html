@@ -20,6 +20,40 @@
             background: white;
         }
         
+        @media screen and (max-width: 768px) {
+            body {
+                max-width: 100%;
+                padding: 15px;
+                margin: 0;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 15pt;
+            }
+            
+            h2 {
+                font-size: 13pt;
+                margin-top: 15pt;
+                margin-bottom: 8pt;
+            }
+            
+            h3 {
+                font-size: 11pt;
+                margin-top: 12pt;
+                margin-bottom: 6pt;
+            }
+            
+            table {
+                font-size: 10pt;
+            }
+            
+            .code-block {
+                font-size: 9pt;
+                padding: 8pt;
+            }
+        }
+        
         h1 {
             font-size: 18pt;
             font-weight: bold;
@@ -167,9 +201,9 @@
     <h3>1.1 总体评估结论</h3>
     
     <ul>
-        <li><strong>开发报价：</strong><span class="warning">$500k 高于市场价</span>，特别是PRD阶段200k不合理。</li>
-        <li><strong>付款结构：</strong>分期合理，但缺乏交付标准和延误惩罚机制。</li>
-        <li><strong>营销顾问费：</strong>要求 5% supply 过高，且无执行责任支撑。正常的比率不会超过1%。过于高的费用将会压缩最终和Binance的空投和活动的空间，也将会极大的增加我们的控盘成本。</li>
+        <li><strong>开发报价：</strong><span class="warning">$500k 相对于市场均价偏高</span>，特别是PRD阶段200k超出预期。</li>
+        <li><strong>付款结构：</strong>分期合理，交付标准和延误管理机制待完善。</li>
+        <li><strong>营销顾问费：</strong>建议 5% supply 相对较高，执行细节有待明确。正常的比率不会超过1%。较高的费用可能会压缩最终和Binance的空投和活动的空间，也会增加控盘成本。</li>
     </ul>
 
     <h3>1.2 技术架构与功能拆解</h3>
@@ -361,7 +395,7 @@ claimYield()：领取Treasury收益分红
 
     <h3>1.4 Sign报价分析</h3>
     
-    <h4>不合理之处</h4>
+    <h4>主要差异点</h4>
     <ol>
         <li><strong>团队规模</strong>
             <ul>
@@ -371,19 +405,19 @@ claimYield()：领取Treasury收益分红
         </li>
         <li><strong>开发周期拉长</strong>
             <ul>
-                <li>Sign声称：2-3个月</li>
+                <li>根据Sign方案：2-3个月</li>
                 <li>实际需要：2-3周</li>
             </ul>
         </li>
         <li><strong>维护费用偏高</strong>
             <ul>
-                <li>Sign要求：10万美元长期维护</li>
-                <li>实际情况：区块链部署后几乎无需维护，只需要1人standby</li>
+                <li>方案中包含：10万美元长期维护</li>
+                <li>市场情况：区块链部署后维护需求相对较低，通常1人standby即可</li>
             </ul>
         </li>
         <li><strong>PRD阶段收费太高</strong>
             <ul>
-                <li>Sign要求：20万美元写文档</li>
+                <li>方案中包含：20万美元写文档</li>
                 <li>市场价格：1万美元以内</li>
             </ul>
         </li>
@@ -391,7 +425,7 @@ claimYield()：领取Treasury收益分红
 
     <h3>1.5 建议</h3>
     
-    <h4>报价谈判</h4>
+    <h4>报价建议</h4>
     <ol>
         <li>合理报价区间：20-25万美元（含合理利润）</li>
         <li>最高可接受：30万美元（如包含额外功能，以及额外服务，例如上币）</li>
@@ -409,7 +443,7 @@ claimYield()：领取Treasury收益分红
         <li><strong>付款机制：</strong>
             <ul>
                 <li>按里程碑付款（至少5期）</li>
-                <li>设置延期惩罚（每周扣5%）</li>
+                <li>设置延期调整机制（每周调减5%）</li>
                 <li>最后20%作为质保金</li>
             </ul>
         </li>
@@ -442,31 +476,31 @@ claimYield()：领取Treasury收益分红
 
     <h2>2. 可行性分析（执行与KPI Review）</h2>
     
-    <h3>2.1 当前方案执行层面的不足</h3>
+    <h3>2.1 当前方案执行层面的待完善点</h3>
     
-    <p class="no-indent">Sign提案主要集中在技术开发，但缺少以下执行细节：</p>
+    <p class="no-indent">Sign提案主要集中在技术开发，以下执行细节待补充：</p>
     
     <ol>
         <li><strong>营销执行计划</strong>
             <ul>
-                <li>未提供具体的KOL合作方案</li>
-                <li>缺少内容创作和发布计划</li>
+                <li>具体的KOL合作方案待补充</li>
+                <li>内容创作和发布计划待详细化</li>
                 <li>社区建设路径不明确</li>
             </ul>
         </li>
         <li><strong>做市安排</strong>
             <ul>
                 <li>提到$300k做市成本，但未说明做市商选择</li>
-                <li>20%的做市利润过高，一般在10%以内，而且如果有服务费不应该再分润，就算是做分润，也是阶梯式的</li>
+                <li>20%的做市利润相对较高，市场一般在10%以内，建议采用阶梯式分润结构</li>
                 <li>C10和FF双代币的流动性如何分配</li>
-                <li>价格维稳机制未明确（牵扯到我们的做市资金规模，控筹率）</li>
+                <li>价格维稳机制待明确（涉及做市资金规模和控筹率）</li>
             </ul>
         </li>
         <li><strong>上所安排</strong>
             <ul>
-                <li>目前的方案只有BN交易所一家，而且仅仅是alpha，并没有主板或者期货的一个考量。如果仅仅是Alpha是没有办法和其他交易所谈免费上币的方案的</li>
-                <li>对于所有其他交易所缺少报价方案和上所计划</li>
-                <li>没有上所时间上的具体规划</li>
+                <li>目前的方案以BN交易所alpha为主，主板或期货的考量待补充。Alpha阶段可能限制与其他交易所的免费上币谈判空间</li>
+                <li>其他交易所的报价方案和上所计划待补充</li>
+                <li>上所时间规划待具体化</li>
             </ul>
         </li>
         <li><strong>运营团队</strong>
@@ -477,9 +511,9 @@ claimYield()：领取Treasury收益分红
         </li>
         <li><strong>KPI设定</strong>
             <ul>
-                <li>5%代币分配给Sign但无绑定条件</li>
-                <li>缺少TVL、用户数、交易量等核心指标</li>
-                <li>没有阶段性里程碑</li>
+                <li>5%代币分配给Sign的绑定条件待明确</li>
+                <li>TVL、用户数、交易量等核心指标待设定</li>
+                <li>阶段性里程碑待设置</li>
             </ul>
         </li>
     </ol>
@@ -489,16 +523,16 @@ claimYield()：领取Treasury收益分红
     <div class="section-box">
         <p class="no-indent"><strong>目前方案的可执行性：中低</strong></p>
         
-        <p class="no-indent"><strong>主要问题：</strong></p>
+        <p class="no-indent"><strong>主要考量：</strong></p>
         <ul>
             <li>Sign执行团队未定，执行计划未确定</li>
-            <li>5%代币成本过高且无执行保障，容易变成我们给他打工</li>
-            <li>缺少专业的营销和做市方案</li>
+            <li>5%代币成本相对较高且执行保障待完善，容易变成我们给他打工</li>
+            <li>专业的营销和做市方案待补充</li>
         </ul>
         
         <p class="no-indent"><strong>建议下一步：</strong></p>
         <ul>
-            <li>要求Sign补充完整执行方案</li>
+            <li>建议Sign补充完整执行方案</li>
             <li>明确各方责任和KPI指标</li>
         </ul>
     </div>
@@ -515,7 +549,7 @@ claimYield()：领取Treasury收益分红
         <li>收益分配：获得C10 Treasury产生的收益</li>
     </ol>
     
-    <p class="no-indent">这种设计可能触发以下合规问题：</p>
+    <p class="no-indent">这种设计可能涉及以下合规考量：</p>
     
     <h4>收益分配的证券化风险</h4>
     <ul>
@@ -526,7 +560,7 @@ claimYield()：领取Treasury收益分红
     
     <h4>治理权的实质性问题</h4>
     <ul>
-        <li>如果治理权仅是形式上的，而实际决策由中心化团队执行，可能被认定为"虚假去中心化"</li>
+        <li>如果治理权主要是形式上的，而实际决策由中心化团队执行，可能面临去中心化程度的质疑</li>
         <li>20%的主动管理权限是否足够构成实质性治理，存在争议</li>
     </ul>
 
@@ -591,8 +625,8 @@ claimYield()：领取Treasury收益分红
         <p class="no-indent"><strong>主要原因：</strong></p>
         <ul>
             <li>收益分配功能增加证券化风险</li>
-            <li>治理权限有限（仅20%）可能被视为不够实质</li>
-            <li>缺少明确的合规框架设计</li>
+            <li>治理权限范围（20%）的实质性程度有待评估</li>
+            <li>明确的合规框架设计待完善</li>
         </ul>
     </div>
 
@@ -616,7 +650,7 @@ claimYield()：领取Treasury收益分红
     
     <div class="section-box">
         <p class="no-indent"><strong>核心结论：</strong></p>
-        <p>Sign的50万美元开发+20万运营+75万买币+5%顾问费报价高于市场水平，建议合理价值区间在30万美元以内。</p>
+        <p>Sign的50万美元开发+20万运营+75万买币+5%顾问费的整体报价相对于市场水平较高，建议合理价值区间在30万美元以内。</p>
         <p>如果不能够商议价格，并且只有他们作为合作方，那么我们希望能够至少进行币安主板的上币或者CZ和币安官方参与我们的宣发。</p>
 
     </div>
